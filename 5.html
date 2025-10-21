@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Solicite ao usuário o seu peso e altura, e calcule o seu IMC;
+    IMC = peso / (altura x altura)
+    
+    -->
+
+    <h1>IMC</h1>
+    <hr>
+
+    <form action="">
+        Altura: <br>
+        <input type="number" id="n1" /> <br>
+        Peso: <br>
+        <input type="number" id="n2" /> <br>
+        <br>
+        <button type="button" onclick="calcular()"> Calcular </button>
+        </form>
+        <div id="resposta"> </div>
+
+        <script>
+        function calcular(){
+            var n1j = parseFloat(document.getElementById("n1").value);
+            var n2j = parseFloat(document.getElementById("n2").value);
+            
+            var md = (n2j / (n1j * n1j));
+
+            if(md < 18.5){
+                msg = "Magreza";
+            }
+                
+            if(md >=18.5 && md <=24.9){
+                msg = "Normal";
+            }
+
+            if(md >=25 && md <=29.9){
+                msg = "Sobrepeso";
+            }
+
+            if(md >=30 && md <=34.9){
+                msg = "Obesidade grau I";
+            }
+
+            if(md >=35 && md <=39.9){
+                msg = "Obesidade grau II";
+            }
+
+            if(md >40){
+                msg = "Obesidade grau III";
+            }
+            document.getElementById("resposta").innerHTML =
+            "Situação :"+ msg + "<br/>"+ "Média"+ Math.floor(md);
+            }
+            
+        
+
+
+    </script>
+
+</body>
+</html>

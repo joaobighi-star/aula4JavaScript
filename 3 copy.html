@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional com conectivos</title>
+</head>
+
+<body>
+    <!-- Criar um programa em javaScript que leia quatro notas de um aluno 
+     e depois imprima a média aritmética das notas e a situação do aluno, 
+     a partir dos seguintes critérios,
+     média < 5 reprovado
+     média entre 5 e 6.9 RECUPERAÇÃO,
+     média > = 7 APROVADO
+     alt shift f alinha a programação-->
+
+    <h1>Situação do aluno</h1>
+    <hr>
+
+    <form action="">
+        Nota1: <br>
+        <input type="number" id="n1" /> <br>
+        Nota2: <br>
+        <input type="number" id="n2" /> <br>
+        Nota3: <br>
+        <input type="number" id="n3" /> <br>
+        Nota4: <br>
+        <input type="number" id="n4" /> <br>
+        <br>
+        <button type="button" onclick="calcular()"> Calcular </button>
+        </form>
+        <div id="resposta"> </div>
+
+     <script>
+        function calcular(){
+            var n1j = parseFloat(document.getElementById("n1").value);
+            var n2j = parseFloat(document.getElementById("n2").value);
+            var n3j = parseFloat(document.getElementById("n3").value);
+            var n4j = parseFloat(document.getElementById("n4").value);
+
+            var md = (n1j + n2j + n3j + n4j)/4;
+
+            if(md >= 7){
+                msg = "Aprovado";
+            } else {
+                if(md >=5){
+                    msg = "Recuperação";
+                } else{
+                    msg = "Reprovado";
+                }
+            }
+            document.getElementById("resposta").innerHTML =
+            "Situação :"+ msg + "<br/>"+ "Média"+ md;
+            }
+            
+        
+
+
+    </script>
+
+</body>
+
+</html>
